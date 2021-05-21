@@ -3,7 +3,6 @@ const db = require('../db/db.json')
 const fs = require('fs')
 
 module.exports = (app) => {
-    // API GET Requests
   
     app.get('/api/notes', (req, res) => res.json(db));
 
