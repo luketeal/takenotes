@@ -14,7 +14,7 @@ module.exports = (app) => {
         db.push(newNoteObj)
         console.log(db)
         res.json(db)
-        // fs.writeFile('../db/db.json',JSON.stringify(db))
+        fs.writeFile('./db/db.json', JSON.stringify(db), err => { if (err) throw err })
     })
    
   };
