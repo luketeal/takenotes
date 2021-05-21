@@ -16,5 +16,18 @@ module.exports = (app) => {
         res.json(db)
         fs.writeFile('./db/db.json', JSON.stringify(db), err => { if (err) throw err })
     })
+
+    app.delete('/api/notes/:id', (req,res) => {
+        console.log(req.params.id)
+        console.log(db)
+        for(each of db) {
+            if(each.id === req.params.id) {
+                db.splice(each,1)
+                console.log(db)
+                res.json(db)
+                fs.writeFile('./db/db.json', JSON.stringify(db), err => { if (err) throw err })
+            }
+        }
+    })
    
   };
